@@ -15,13 +15,13 @@ jobs:
         mongodb-version: [ '4.4' ]
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v3.3.0
       - name: Use Node.js version ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3.6.0
         with:
           node-version: ${{ matrix.node-version }}
       - name: Use MongoDB from githhub actions
-        uses: supercharge/mongodb-github-action@v1.6.0
+        uses: supercharge/mongodb-github-action@1.9.0
         with:
            mongodb-version: ${{ matrix.mngodb-version }}
       - run: npm install
